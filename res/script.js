@@ -9,8 +9,8 @@ $(function() {
   var docHeight = doc.height() > win.height() ? doc.height() : win.height();
   
   // get footer, header, and styles
-  $.get("header.html", html => $("header").html(html));
-  $.get("footer.html", html => $("footer").html(html).css({ top: docHeight-$(this).height() }));
   $.get("res/style.css", css => $("head").append("<style>" + css + "</style>"));
+  $.get("header.html", html => $("header").html(html));
+  $.get("footer.html", html => $("footer").html(html).css({ top: docHeight-$("footer").height() }));
 
 });
