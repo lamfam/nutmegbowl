@@ -5,7 +5,7 @@ $(function() {
   var win = $(window);
   
   // accessory functions
-  var getPxValue = (input) => parseInt(input.substring(input.length-3, input.length));
+  var getPxValue = (input) => parseInt(input.substring(0, input.length-2));
 
   // reposition the footer
   var docWidth, docHeight;
