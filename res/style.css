@@ -7,3 +7,12 @@ body, html {
   font-size: 16px;
   font-family: verdana, sans-serif;
 }
+footer {
+  width: 100%;
+  padding: 20px;
+  background-color: darkgrey;
+  color: lightgrey;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
