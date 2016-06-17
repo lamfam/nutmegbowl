@@ -3,17 +3,18 @@ $(function() {
   // set element variables
   var doc = $(document);
   var win = $(window);
-
-  // document/window dimensions (whichever is larger)
-  var docWidth = doc.width() > win.width() ? doc.width() : win.width();
-  var docHeight = doc.height() > win.height() ? doc.height() : win.height();
   
   // accessory functions
   var getPxValue = (input) => parseInt(input.substring(input.length-3, input.length));
 
   // reposition the footer
-  var reposition = () => $("footer").css({ top: docHeight-$("footer").height()+getPxValue($("footer").css("padding-top"))*2 });
-  win.resize(reposition);
+  var docWidth, docHeight;
+  var reposition = () => $("footer").css({ top: docHeight-$("footer").height()-getPxValue($("footer").css("padding-top"))*2 });
+  win.resize(() => {
+    docWidth = doc.width() > win.width() ? doc.width() : win.width();
+    docHeight = doc.height() > win.height() ? doc.height() : win.height();
+    reposition();
+  }).resize();
 
   // get footer, header, and styles
   $.get("res/style.css", css => $("head").append("<style>" + css + "</style>"));
