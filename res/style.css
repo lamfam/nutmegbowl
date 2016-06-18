@@ -35,7 +35,10 @@ footer > div {
   margin: 10px 0;
 }
 footer > h2 {
-  margin: 0 0 50px 0;
+  margin: 0;
+}
+footer > h2:nth-child(2) {
+  margin: 20px 0 0 0;
 }
 footer .shareBox {
   float: right;
