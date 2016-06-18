@@ -23,7 +23,7 @@ $(function() {
     $("body").append(footer);
     reposition();
     $("div#menu").css({ height: win.height() });
-  }).resize();
+  });
 
   // get footer, header, and styles
   $("head").append("<link rel='stylesheet' type='text/css' href='res/fa.css' /><link rel='stylesheet' type='text/css' href='res/style.css' />");
@@ -36,6 +36,7 @@ $(function() {
       if(!$(this).is("div#head, div#head *, .menuButton") && !$("div#menu").hasClass("hidden"))
         $("div#menu").addClass("hidden");
     });
+    win.resize();
   });
   $.get("footer.html", function(html) {
     $("footer").html(html);
@@ -48,6 +49,8 @@ $(function() {
     $("#facebookShareButton").attr({ href: "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(window.location.href) });
     $("#twitterShareButton").attr({ href: "https://twitter.com/intent/tweet?text=" + encodeURIComponent("Come visit at Nutmeg Bowl for the best bowling in Fairfield County! " + window.location.href) });
     $("#googlePlusShareButton").attr({ href: "https://plus.google.com/share?url=" + encodeURIComponent(window.location.href) });
+
+    win.resize();
   });
 
 });
