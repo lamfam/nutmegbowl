@@ -42,7 +42,7 @@ $(function() {
     $("footer").html(html);
     reposition();
     // popups to share
-    $(document).on("click", ".shareButtonLink", function() {
+    $("body").on("click", ".shareButtonLink", function() {
       window.open($(this).attr("href"), "", "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=500");
       return false;
     });
