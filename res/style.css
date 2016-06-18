@@ -42,9 +42,11 @@ footer > h2:nth-of-type(2) {
 }
 footer .shareBox {
   float: right;
+  margin: 0;
 }
 footer .shareButton {
   font-size: 50px;
+  margin: 0 25px;
 }
 footer .shareButton:nth-of-type(1):hover { color: #3b5998; }
 footer .shareButton:nth-of-type(2):hover { color: #55acee; }
