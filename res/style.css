@@ -31,18 +31,9 @@ footer {
   background-color: #99d3df;
   position: absolute;
 }
-
-.vBox {
-  display: flex;
-  flex-direction: column;
+footer > div {
+  margin: 0;
 }
-.vBox > * {
-  padding-bottom: 20px;
-}
-.hBox {
-  display: flex;
-  flex-direction: row;
-}
-.hBox > * {
-  padding-right: 20px;
+footer > h2 {
+  margin: 0 0 20px 0;
 }
