@@ -31,6 +31,9 @@ footer {
   background-color: #99d3df;
   position: absolute;
 }
+footer .vBox {
+  padding-right: 20px;
+}
 
 .vBox {
   display: flex;
