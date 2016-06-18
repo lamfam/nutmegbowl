@@ -48,15 +48,16 @@ footer .shareButton {
   font-size: 50px;
   margin: 0 25px;
 }
-footer .shareButton:nth-of-type(1):hover { color: #3b5998; }
-footer .shareButton:nth-of-type(2):hover { color: #55acee; }
-footer .shareButton:nth-of-type(3):hover { color: #dd4b39; }
+footer .shareButton.fa-facebook:hover { color: #3b5998; }
+footer .shareButton.fa-twitter:hover { color: #55acee; }
+footer .shareButton.fa-google-plus:hover { color: #dd4b39; }
 
 .animate {
   transition: all .5s;
 }
 .noStyle {
   border-bottom: none;
+  color: inherit;
 }
 .pointer {
   cursor: pointer;

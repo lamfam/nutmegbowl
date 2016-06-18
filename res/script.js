@@ -28,11 +28,13 @@ $(function() {
     reposition();
     
     // popups to share
-    $(document).on("click", ".shareButtonLink", () => {
-      window.open($(this).attr(href), "", "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600");
+    $(document).on("click", ".shareButtonLink", function() {
+      window.open($(this).attr("href"), "", "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=500");
       return false;
     });
-    $("#googlePlusShareButton").attr({ href: "https://plus.google.com/share?url=" + encodeURI(window.location.href) });
+    $("#facebookShareButton").attr({ href: "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(window.location.href) });
+    $("#twitterShareButton").attr({ href: "https://twitter.com/intent/tweet?text=" + encodeURIComponent("Come visit at Nutmeg Bowl for the best bowling in Fairfield County! " + window.location.href) });
+    $("#googlePlusShareButton").attr({ href: "https://plus.google.com/share?url=" + encodeURIComponent(window.location.href) });
 
   });
  
