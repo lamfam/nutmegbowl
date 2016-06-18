@@ -28,5 +28,11 @@ $(function() {
     reposition();
   });
 
+  // popups to share
+  $(".shareButton").click(() => {
+    window.open($(this).attr(href), "", "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600");
+    return false;
+  });
+  $("googlePlusShareButton").attr({ href: "https://plus.google.com/share?url=" + encodeURI(window.location.href) });
 
 });
