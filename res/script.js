@@ -26,13 +26,14 @@ $(function() {
   $.get("footer.html", html => {
     $("footer").html(html);
     reposition();
-  });
+    
+    // popups to share
+    $(document).on("click", ".shareButtonLink", () => {
+      window.open($(this).attr(href), "", "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600");
+      return false;
+    });
+    $("#googlePlusShareButton").attr({ href: "https://plus.google.com/share?url=" + encodeURI(window.location.href) });
 
-  // popups to share
-  $(".shareButtonLink").click(() => {
-    window.open($(this).attr(href), "", "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600");
-    return false;
   });
-  $("#googlePlusShareButton").attr({ href: "https://plus.google.com/share?url=" + encodeURI(window.location.href) });
-
+ 
 });
