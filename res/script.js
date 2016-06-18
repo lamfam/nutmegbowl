@@ -21,7 +21,7 @@ $(function() {
   }).resize();
 
   // get footer, header, and styles
-  $.get("res/style.css", css => $("head").append("<style>" + css + "</style>"));
+  $("head").append("<link rel='stylesheet' type='text/css' href='res/fa.css' /><link rel='stylesheet' type='text/css' href='res/style.css' />");
   $.get("header.html", html => $("header").html(html));
   $.get("footer.html", html => {
     $("footer").html(html);

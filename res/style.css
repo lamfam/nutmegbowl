@@ -31,15 +31,18 @@ footer {
   background-color: #99d3df;
   position: absolute;
 }
-footer .vBox {
-  padding-right: 20px;
-}
 
 .vBox {
   display: flex;
   flex-direction: column;
 }
+.vBox > * {
+  padding-bottom: 20px;
+}
 .hBox {
   display: flex;
   flex-direction: row;
+}
+.hBox > * {
+  padding-right: 20px;
 }
