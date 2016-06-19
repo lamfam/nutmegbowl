@@ -17,6 +17,7 @@ $(function() {
   };
   win.resize(function() {
     var footer = foot;
+    $("body").css({ paddingBottom: foot.height() + 2*getPxValue(foot.css("padding-top")) + 20 });
     foot.remove();
     docWidth = doc.width() > win.width() ? doc.width() : win.width();
     docHeight = doc.height() > win.height() ? doc.height() : win.height();
@@ -30,11 +31,11 @@ $(function() {
   $.get("header.html", function(html) {
     $("header").html(html);
     // toggle menu
-    $(".menuButton").click(function() { $("div#menu").toggleClass("hidden") });
+    $(".menuButton").click(function() { $("div#menu").toggleClass("hidden").toggleClass("shadow"); });
     doc.on("click", "*", function(event) {
       event.stopPropagation();
-      if(!$(this).is("div#head, div#head *, .menuButton") && !$("div#menu").hasClass("hidden"))
-        $("div#menu").addClass("hidden");
+      if(!$(this).is("div#menu, div#menu *, .menuButton") && !$("div#menu").hasClass("hidden"))
+        $("div#menu").addClass("hidden").removeClass("shadow");
     });
     win.resize();
   });
