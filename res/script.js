@@ -38,6 +38,15 @@ $(function() {
         $("div#menu").addClass("hidden").removeClass("shadow");
     });
     win.resize();
+    // dropdown code
+    $(".dropdown").each(function() {
+      $("#dropdown" + $(this).data("dropdown")).css({ top: $("nav#mainNav").position().top+$("nav#mainNav").height(), left: $(this).position().left });
+      $(this).hover(function() {
+        $("#dropdown" + $(this).data("dropdown")).removeClass("hidden");
+      }, function() {
+        $("#dropdown" + $(this).data("dropdown")).addClass("hidden");
+      });
+    });
   });
   $.get("footer.html", function(html) {
     $("footer").html(html);
