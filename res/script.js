@@ -44,7 +44,14 @@ $(function() {
       $(this).hover(function() {
         $("#dropdown" + $(this).data("dropdown")).removeClass("hidden");
       }, function() {
-        $("#dropdown" + $(this).data("dropdown")).addClass("hidden");
+        var dropdown = $("#dropdown" + $(this).data("dropdown"));
+        doc.mousemove(function(event) {
+          var x = event.pageX, y = event.pageY, minX = dropdown.position().left, minY = dropdown.position().top, maxX = minX + dropdown.width(), maxY = minY + dropdown.height();
+          if(x < minX || x > maxX || y < minY || y > maxY) {
+            dropdown.addClass("hidden");
+            doc.off("mousemove");
+          }
+        });
       });
     });
   });
