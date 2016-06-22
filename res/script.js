@@ -40,16 +40,20 @@ $(function() {
     win.resize();
     // dropdown code
     $(".dropdown").each(function() {
-      $("#dropdown" + $(this).data("dropdown")).css({ top: $("nav#mainNav").position().top+$("nav#mainNav").height(), left: $(this).position().left });
+      $("#dropdown" + $(this).data("dropdown")).css({ top: $("nav#mainNav").position().top + $("nav#mainNav").height(), left: $(this).position().left });
       $(this).hover(function() {
+        $(".dropdown").removeClass("linger");
+        $(this).addClass("linger");
+        $(".dropdownLinks").addClass("hidden");
         $("#dropdown" + $(this).data("dropdown")).removeClass("hidden");
       }, function() {
-        var dropdown = $("#dropdown" + $(this).data("dropdown"));
+        var dropdown = $("#dropdown" + $(this).data("dropdown")), dropdownTab = $(this);
         doc.mousemove(function(event) {
-          var x = event.pageX, y = event.pageY, minX = dropdown.position().left, minY = dropdown.position().top, maxX = minX + dropdown.width(), maxY = minY + dropdown.height();
+          var x = event.pageX, y = event.pageY, minX = dropdown.position().left, minY = $("nav#mainNav").position().top, maxX = minX + dropdown.width(), maxY = minY + $("nav#mainNav").height() + dropdown.height();
           if(x < minX || x > maxX || y < minY || y > maxY) {
             dropdown.addClass("hidden");
             doc.off("mousemove");
+            dropdownTab.removeClass("linger");
           }
         });
       });
