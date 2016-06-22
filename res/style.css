@@ -90,7 +90,7 @@ header .menuButton {
   text-align: center;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.2) 0 0 1px 1px;
-  z-index: 1;
+  z-index: 100;
 }
 header h1#title {
   margin: 0 0 0 100px;
@@ -104,7 +104,7 @@ header div#menu {
   top: 0;
   background-color: white;
   border-right: black;
-  z-index: 2;
+  z-index: 4;
   width: 200px;
 }
 header div#menu.hidden {
